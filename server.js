@@ -7,6 +7,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const routes = require("./src/router/routes");
+app.use("/api/v1", routes);
+
 const port = process.env.PORT;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
