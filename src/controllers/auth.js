@@ -28,7 +28,7 @@ exports.register = async (req, res) => {
     // kasih error jika ada kesalahan
     const { errors } = schema.validate(req.body);
 
-    if (error) {
+    if (errors) {
       return res.status(400).send({
         error: {
           message: errors.details[0].message,
